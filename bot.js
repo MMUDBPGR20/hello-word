@@ -1,12 +1,12 @@
 const Discord = require('discord.js');
-
+const client = new Discord.Client()
+const fetch = require('node-fetch')
+const querystring = require('querystring')
 // discord.js module is required
 console.log('Beep beep!');
 
 
-// creating a new discord bot client
-const client = new Discord.Client();
-client.login('ODMxMjA4NTQ1NDExMTM3NTk2.YHR5SA.vrjvUz0ZrY4talz6ZvBx_iGqszo');
+client.login('ODMxMjA4NTQ1NDExMTM3NTk2.YHR5SA.t3AGD4FJ1Z-sUV9VtmxlaySYaL4');
 
 client.on('ready', readyDiscord);
 
@@ -37,9 +37,44 @@ function gotMessage(msg)
     {
         msg.channel.send ('Will do');
     }
-
-    else if()
 }
+
+// client.on('message', async message => {
+//     const args = message.content.substring(prefix.length).split(" ")
+
+//     if(message.content.startsWith('define'))
+//     {
+//         const searchString = querystring.stringify({term: args.slice(1).join(" ") })
+
+//         if(!searchString) return message.channel.send("You need to specify something to search")
+
+//         const { list } = await fetch (`https://wordsapiv1.p.rapidapi.com/words/.22-caliber/pertainsTo${searchString}`).then(r => r.jsson())
+
+//         try{
+
+//         const [fetched] = list
+//         const trim = (str, max) => ((str.length > max)? `${str.slice(0,max - 3)}...` : str)
+//         const embed = new Doscord.MessageEmbed()
+//             .setColor("GOLD")
+//             .setTitle(fetched.word)
+//             .setURL(fetched.permalink)
+//                 .addFields(
+//                     {name: 'Definition', value: trim(answer.definition, 1024)},
+//                     { name: 'Example', value: trim(answer.example, 1024) },
+//                     { name: 'Rating', value: `${answer.thumbs_up} 👍. ${answer.thumbs_down} 👎.` },
+//                 )
+//                 message.channel.send(embed)
+//             } catch (error) {
+//                 console.log(error)
+//                 return message.channel.send(new Discord.MessageEmbed()
+//                     .setColor("BLUE")
+//                     .setDescription(`No results were found for **${args.slice(1).join(" ")}**`)
+//                 )
+//             }
+//     }
+// })
+
+
 
 // client.on('help', getHelp);
 // function getHelp(gh)
@@ -49,4 +84,3 @@ function gotMessage(msg)
 //         gh.channel.send ('Will do');
 //     }
 // }
-lkp[WebKitCSSMatrix]
