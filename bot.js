@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client()
 const fetch = require('node-fetch')
 const querystring = require('querystring')
-// discord.js module is required
-console.log('Beep beep!');
 
+
+console.log('Beep beep!');
 
 client.login('ODMxMjA4NTQ1NDExMTM3NTk2.YHR5SA.t3AGD4FJ1Z-sUV9VtmxlaySYaL4');
 
@@ -14,7 +14,6 @@ function readyDiscord()
 {
     console.log('Success');
 }
-
 
 const replies = 
 [

@@ -2,9 +2,8 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const fetch = require('node-fetch')
 const querystring = require('querystring')
-var config ={
-    prefix: "!",
-}
+const config = require ('./config.json')
+const command = require ('./command')
 
 client.login('ODMxMjA4NTQ1NDExMTM3NTk2.YHR5SA.t3AGD4FJ1Z-sUV9VtmxlaySYaL4');
 
@@ -16,7 +15,6 @@ function readyDiscord()
 }
 
 client.on('message', async message => {
-	const args = message.content.substring(prefix.length).split(" ")
 
 	if (message.channel.id == '832322311037255700' && message.content.startsWith(`${prefix}urban`)) {		
 		const searchString = querystring.stringify({ term: args.slice(1).join(" ") })
