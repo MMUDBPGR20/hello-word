@@ -6,7 +6,7 @@ const querystring = require('querystring')
 
 console.log('Beep beep!');
 
-client.login('ODMxMjA4NTQ1NDExMTM3NTk2.YHR5SA.Dws4po6mHuSTqSp6C6XPpSrXiKI');
+client.login('ODMxMjA4NTQ1NDExMTM3NTk2.YHR5SA.xA4OfG6y-Oi4ZnA2d6FW97FnLAs');
 
 client.on('ready', readyDiscord);
 
