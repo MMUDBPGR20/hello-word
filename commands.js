@@ -1,0 +1,31 @@
+const {prefix} = require ('./config.json')
+
+
+
+module.exports = ( client, aliases, callback) =>
+{
+    if (typeof aliases === 'string')
+    {
+        aliases = [aliases]
+    }
+    client.login('ODMxMjA4NTQ1NDExMTM3NTk2.YHR5SA.mCZxP7SjvAx7vRy6aJ945ISkBac')
+    
+    client.on('message', message =>
+    {
+        const { content } = message;
+        
+        
+        
+        aliases.forEach(alias => 
+        {
+            const command = `${prefix}${alias}`
+
+            if (content.startsWith(`${command} `) || content === command)
+            {
+                console.log(`Running the command ${command}`)
+                callback(message)
+            }
+        })
+    })
+      
+}  
