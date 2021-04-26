@@ -42,7 +42,7 @@ client.on('message', async message =>
             })
                     
             if (!args.slice(1).join(" ")) return message.channel.send(
-            embed().embed
+            MessageEmbed()
             .setColor("BLUE")
             .setDescription('You need to specify something you want to search the urban dictionary'))
                     
@@ -54,7 +54,7 @@ client.on('message', async message =>
 
                 const trim = (str, max) => ((str.length > max) ? `${str.slice(0, max - 3)}...` : str)
 
-                embed().embed
+                MessageEmbed()
                 .setColor("BLUE")
                 .setTitle(answer.word)
                 .setURL(answer.permalink)
@@ -68,7 +68,7 @@ client.on('message', async message =>
             {
                 console.log(error)
                 return message.channel.send(
-                embed().embed
+                MessageEmbed()
                 .setColor("BLUE")
                 .setDescription(`No results were found for **${args.slice(1).join(" ")}**`))
                         
@@ -81,8 +81,7 @@ client.on('message', async message =>
     }		
             
     
-
-
+    
     client.registry
     .registerGroups(
     [
@@ -112,10 +111,6 @@ client.on('message', async message =>
             message.channel.send ('Will do')
         }
     }
-
-
-
-
 
     module.exports = ( aliases, callback) =>
     {
