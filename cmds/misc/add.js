@@ -1,5 +1,5 @@
-const Commando = require('discord,js-commando')
-const { CommandoClient } = require('discord.js-commando')
+//const config = require('./index')
+const Commando = require ('discord.js-commando')
 
 module.exports = class AddCommand extends Commando.Command 
 {
@@ -10,12 +10,18 @@ module.exports = class AddCommand extends Commando.Command
             name: 'add',
             group: 'misc',
             memberName: 'add',
-            description: 'Adds numbers together'
+            description: 'Adds numbers together',
+            argsType: 'multiple'
         })
     }
 
-    async run(message)
+    async run(message, args)
     {
-        console.log(message.content)
+        let sum = 0
+        for (const arg of args)
+        {
+            sum += parseInt(arg)
+        }
+        message.reply(`The sum is ${sum}`)
     }
 }
